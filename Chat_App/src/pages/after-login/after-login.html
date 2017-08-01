@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >
+      Chat App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-menu type="overlay" [content]="mycontent" >
+  <ion-content>
+    <ion-list >
+     <ion-item *ngFor="let user of result" (click)="foo(user.name,user.id)">{{user.name}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage">
+</ion-nav>
+
+<ion-content padding>
+  <div *ngFor="let chat of messages">
+    {{chat.message}}
+  </div>
+  <div style=" position: absolute;
+    left: 100px;
+    top: 100px;">
+
+  <ion-item>
+    <ion-label stacked>Send Message</ion-label>
+    <ion-input type="text" [(ngModel)]="messageContent" (keyup.enter)="onEnter(messageContent)"></ion-input>
+</ion-item>
+</div>
+</ion-content>

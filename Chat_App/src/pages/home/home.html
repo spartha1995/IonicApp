@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login/Registration
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <ion-item>
+   <ion-label floating>Username</ion-label>
+   <ion-input type="text" [(ngModel)]="userName"></ion-input>
+ </ion-item>
+ <div padding>
+  <button ion-button block (click)="logIn(userName)">Sign In</button>
+</div>
+</ion-content>
